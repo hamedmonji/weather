@@ -1,6 +1,4 @@
-# weather
-
-## test weather projects
+# test weather project
 
 ## what's used
 
