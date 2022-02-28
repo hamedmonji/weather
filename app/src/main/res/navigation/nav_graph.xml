@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/forecastList">
+
+    <fragment
+        android:id="@+id/forecastList"
+        android:name="com.example.weather.forecastList.ForecastListFragment"
+        android:label="ForecastList" >
+        <action
+            android:id="@+id/action_forecastList_to_forecastDetailFragment"
+            app:destination="@id/forecastDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forecastDetailFragment"
+        android:name="com.example.weather.forecastDetail.ForecastDetailFragment"
+        android:label="ForecastDetailFragment" >
+        <argument
+            android:name="forecastData"
+            app:argType="com.example.weather.data.forecast.ForecastData" />
+    </fragment>
+</navigation>

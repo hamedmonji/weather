@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">weather</string>
+    <string name="temperature">%.2f°</string>
+    <string name="temperatures_for_today">Temperatures for today</string>
+    <string name="pressure">pressure: %d</string>
+    <string name="humidity">humidity: %d</string>
+    <string name="clouds">clouds: %d</string>
+    <string name="weather_condition_hot">Hot</string>
+    <string name="weather_condition_cold">Cold</string>
+    <string name="weather_condition_normal">Normal</string>
+    <item name="day" type="string">Day: %.2f°</item>
+    <item name="night" type="string">Night: %.2f°</item>
+    <item name="morning" type="string">Morning: %.2f°</item>
+    <item name="evening" type="string">Evening: %.2f°</item>
+    <item name="max" type="string">Max: %.2f°</item>
+    <item name="min" type="string">Min: %.2f°</item>
+</resources>
