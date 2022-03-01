@@ -29,7 +29,6 @@ class ForecastViewModelTest {
     @Test
     fun `when loading forecasts starts isFetchingForecasts should be true `() = runTest {
         val viewModel = ForecastListViewModel(TestForecastRepository(shouldFail = false))
-        viewModel.loadForecasts()
         val state = viewModel.forecastState.first()
         Assert.assertTrue(
             "isFetchingForecasts should be true but is false",
@@ -40,7 +39,6 @@ class ForecastViewModelTest {
     @Test
     fun `when loading forecasts success state with forecastModel should be emitted `() = runTest {
         val viewModel = ForecastListViewModel(TestForecastRepository(shouldFail = false))
-        viewModel.loadForecasts()
         val state = viewModel.forecastState.drop(1).first()
         Assert.assertFalse(
             "isFetchingForecasts should be false but is true",
@@ -52,7 +50,6 @@ class ForecastViewModelTest {
     @Test
     fun `when loading forecasts fails message should be emitted `() = runTest {
         val viewModel = ForecastListViewModel(TestForecastRepository(shouldFail = true))
-        viewModel.loadForecasts()
         val state = viewModel.forecastState.drop(1).first()
         Assert.assertFalse(
             "isFetchingForecasts should be false but is true",
@@ -62,7 +59,7 @@ class ForecastViewModelTest {
             "forecastModels should be empty",
             state.forecasts.isEmpty()
         )
-        Assert.assertNotNull("message should not be null", state.message)
+        Assert.assertTrue("message should not be empty", state.messages.isNotEmpty())
     }
 
     class TestForecastRepository(private val shouldFail: Boolean = false) : ForecastRepository {
